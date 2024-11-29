@@ -1,5 +1,4 @@
 
-```markdown
 # Welcome to the Project!
 
 Hello, I'm **Nishan** and welcome to this project! Let's get started with setting up and customizing the app.
