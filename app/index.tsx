@@ -1,8 +1,13 @@
-import { Image, View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { Image, View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 
-export default function Home() {
-  const navigation = useNavigation();
+export default function Index() {
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    console.log("Clicked");
+    router.replace("/home");
+  };
 
   return (
     <View
@@ -14,7 +19,10 @@ export default function Home() {
         alignItems: "center",
       }}
     >
-      <Image style={styles.image} source={require("../assets/images/piggy.png")} />
+      <Image
+        style={styles.image}
+        source={require("../assets/images/piggy.png")}
+      />
       <Text
         style={{
           fontFamily: "freckle-face",
@@ -33,12 +41,7 @@ export default function Home() {
       >
         Manage Your Borrowing and Lending
       </Text>
-      <TouchableOpacity
-        onPress={() => {
-          console.log("Login");
-        }}
-        style={styles.startButton}
-      >
+      <TouchableOpacity onPress={handleGetStarted} style={styles.startButton}>
         <Text
           style={{
             color: "white",
@@ -66,5 +69,5 @@ const styles = StyleSheet.create({
     height: "40%",
     width: "100%",
     resizeMode: "contain",
-  }
+  },
 });
