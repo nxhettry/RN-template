@@ -9,9 +9,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import "react-native-reanimated";
-
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { SharedObject } from "expo";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -33,9 +31,9 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack initialRouteName="landingpage">
         <Stack.Screen
-          name="index"
+          name="landingpage"
           options={{
             headerShown: false,
           }}

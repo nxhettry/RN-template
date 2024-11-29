@@ -6,7 +6,7 @@ export default function Index() {
 
   const handleGetStarted = () => {
     console.log("Clicked");
-    router.replace("/home");
+    router.replace("/");
   };
 
   return (
